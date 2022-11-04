@@ -6,7 +6,7 @@ file_upload = files.upload()
 ```
 You can download the file [here](https://drive.google.com/file/d/1bYWfWoPAaLSjiHQwQhHSYikSCqJYDGCM/view?usp=share_link "here")
 
-### Handling missing values
+## Handling missing values
  
 You will find that the whole dataset have several missing values as shown in the figure below
 ![image](https://user-images.githubusercontent.com/50804224/200028164-d545e154-a953-4844-92e0-edee8b670f6d.png)
@@ -26,3 +26,23 @@ summary_per.to_csv('values_missing_percentage.csv', encoding='utf-8', index=Fals
 These two lines of code store:
 1. A table with a sum of total values missing by country for all the columns stored in a .csv file called `values missing.csv` 
 2. A table with a percentage of total values missing by country for all the columns stored in a .csv file called `values_missing_percentage.csv` 
+
+### Deleting some data
+The figure below show the countries that has more than 60% of missing values in total 
+![image](https://user-images.githubusercontent.com/50804224/200085203-b8e62240-ac46-4dfd-af0c-15ca17263d51.png)
+
+The figure above shows that these countries with huge amount of missing values are mainly located in Central America, Africa and Oceania. If this data is shown in numbers the next figure show the percentage of total missing values by country with more than 60%
+![image](https://user-images.githubusercontent.com/50804224/200085255-18752e15-63c6-40b5-9024-c2d9dc4381a5.png)
+
+#### Are these countries important to the whole world emissions?
+
+[According to a research of our world in data](https://ourworldindata.org/co2-emissions "co2 emissions according to a research show in our world in data"), these countries not represent a meaningful impact on the total amount of emissions and other features related damaging the ozone layer, so that's why in the analysis this data is removed 
+
+### Replacing missing values
+
+The figure below shows the China example in scatter plots for all dataset characteristics impacting the global environment over the years
+![image](https://user-images.githubusercontent.com/50804224/200086544-47a93f33-87b5-4642-8a58-c573eb03774f.png)
+These plots show a meaningful characteristic for almost every single column in the dataset, there exist a **trend** this is why a function is built to replace the values missing in the dataset by an **interpolation** of the data for every column separated by **country**
+
+The figure below show the China example with the missing values already filled following the approach already mentioned
+![image](https://user-images.githubusercontent.com/50804224/200089362-2e1e34ec-ff91-404e-933f-bc0cc8788ef4.png)
