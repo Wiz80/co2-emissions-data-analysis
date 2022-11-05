@@ -1,10 +1,19 @@
 # co2-emissions-data-analysis
-Once uploaded the repo, run the `Co2 emissions Analysis.ipynb` file
-You will find a cell asking for the csv file 
+Once uploaded the repo, run the `CO2_emissions_Analysis.ipynb` file
+
+if you are running the code in google colab uncomment the next lines
 ```python
+import io
+from google.colab import files
+
 file_upload = files.upload()
+owid_co2_df = pd.read_csv(io.BytesIO(file_upload['owid-co2-data.csv']))
+
 ```
-You can download the file [here](https://drive.google.com/file/d/1bYWfWoPAaLSjiHQwQhHSYikSCqJYDGCM/view?usp=share_link "here")
+if you are running the code on a desktop code editor run the cell
+```python
+owid_co2_df = pd.read_csv('owid-co2-data.csv')
+```
 
 ## Handling missing values
  
